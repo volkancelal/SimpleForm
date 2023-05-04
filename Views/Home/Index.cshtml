@@ -1,0 +1,26 @@
+﻿@model PersonModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">@ViewBag.Message</div>
+    }
+
+    <form asp-action="SaveName" asp-controller="Home" method="post">
+        <div>
+            <label asp-for="FirstName">First Name:</label>
+            <input asp-for="FirstName" required>
+        </div>
+        <div>
+            <label asp-for="LastName">Last Name:</label>
+            <input asp-for="LastName" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+
